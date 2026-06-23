@@ -1,0 +1,32 @@
+/*
+TMC Editor Configuration (TwinCAT Module Class)In the .tmc file (edit via TMC Editor):Data Areas:Inputs (Input-Destination): Process inputs + diagnostics.
+Outputs (Output-Source): Process outputs + status.
+
+Add parameters, methods if needed.
+Implement ITcCyclic for cyclic execution.
+
+Example data areas (define structures in code/TMC)
+
+*/
+
+// In TMC (or corresponding header): Define data areas
+typedef struct _Inputs {
+    BOOL bStart;           // Digital start input
+    BOOL bStop;            // Digital stop input
+    UINT nAnalogIn;        // Example analog input (0-65535)
+    // ... more IO
+} Inputs;
+
+typedef struct _Outputs {
+    BOOL bRunning;         // Digital output
+    BOOL bFault;           // Fault lamp/output
+    UINT nAnalogOut;       // Analog output
+    // ... more
+} Outputs;
+
+typedef struct _Diagnostics {
+    ULONG ulCycleCount;
+    ULONG ulErrorCount;
+    BOOL bIoHealthy;
+    // State machine status, etc.
+} Diagnostics;

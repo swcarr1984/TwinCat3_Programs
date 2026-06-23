@@ -1,0 +1,23 @@
+Simple Running Main / Integration Notes
+
+Task Configuration: In TwinCAT System Manager, assign the TcCOM object to a real-time 
+task (e.g., 2-10 ms cycle).
+
+IO Mapping: Link Inputs / Outputs to physical terminals (ELxxxx) or other TcCOM/PLC variables.
+
+External Network Data Mapping:Use ADS (standard Beckhoff protocol over TCP/UDP). 
+External clients (C#, Python, another TwinCAT) connect via AMS NetID.
+Map data areas as symbols → visible over ADS.
+For advanced: Implement custom ADS interface or use notifications.
+
+Diagnostics: Expose m_Diag structure via data area or ADS. Use TwinCAT Scope for tracing.
+Build & Deploy: Remember - need to sign the project (certificate), deploy to target, activate config.
+
+Review each major section when building. 
+State machine, IO checks, add control. 
+If pulling further sections - use full samples:
+- check Beckhoff Infosys (Sample01: Cyclic IO etc) or their GitHub TC1300_Samples. 
+infosys.beckhoff.com
+
+This runs cyclically in real-time. Test in a TwinCAT environment usinng the XAEShell.
+Enusre version will align, previous issues with compatability.
