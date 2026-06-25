@@ -2,11 +2,16 @@ TwinCAT 3 Programs – PLC / Automation / Systems Engineering
 This repository contains early‑stage TwinCAT 3 PLC program components developed for working with Beckhoff systems 
 in automation and control‑systems engineering.
 
-Purpose of this repo is to build a clean, modular collection of TwinCAT components/tasks assisting with:
+Example C++ components and interface scripts can be referenced via the below Beckhoff link:
+- https://infosys.beckhoff.com/english.php?content=../content/1033/tc3_c/2407126539.html&id=
+
+Purpose of this repo is to build further on the above base examples to create a clean, modular collection of 
+TwinCAT components/tasks assisting with:
+
 - PLC program structure
-- Task configuration
+- Specific Task configurations
 - Motion and I/O handling
-- Function blocks and modules
+- Specific Function blocks and modules
 - Real‑time execution configuration (in conjunction with task config above)
 
 Best practices for Beckhoff TwinCAT development
